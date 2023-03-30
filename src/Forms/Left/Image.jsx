@@ -10,7 +10,7 @@ function Image() {
     "
     >
       <div
-        className="relative bg-cover bg-center bg-no-repeat  h-96 w-52"
+        className="relative bg-cover bg-center bg-no-repeat h-96 w-52"
         style={{
           backgroundImage: `url(${imageForm})`,
         }}
