@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .input {
+    @apply bg-transparent border-solid border font-light text-sm text-gray-300 p-2 grow w-96 rounded-lg border-gray-200 hover:border-gray-300 focus:outline-none focus:border-2;
+  }
+
+  .h3 {
+    @apply text-sm text-left text-gray-300 opacity-80 font-normal pb-1;
+  }
+
+  .button {
+    @apply text-lg border-2 font-medium rounded-xl bg-blue-400 text-gray-100 px-2 py-1 hover:border-blue-200 focus:outline-none;
+  }
+}
+
 :root {
   font-family: Ubuntu, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

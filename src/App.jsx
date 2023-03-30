@@ -2,21 +2,29 @@ import { useState } from "react";
 
 import "./App.css";
 import Card from "./UI/Card";
-import Info from "./Forms/Right/Info";
+import Right from "./Forms/Right/Right";
 import Image from "./Forms/Left/Image";
 
 function App() {
   const [count, setCount] = useState(0);
 
+  // States - Your Info
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
   return (
     <div className="App">
       <Card>
-        {/* <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button> */}
-
         <Image />
-        <Info />
+        <Right
+          name={name}
+          setName={setName}
+          email={email}
+          setEmail={setEmail}
+          phone={phone}
+          setPhone={setPhone}
+        />
       </Card>
     </div>
   );
