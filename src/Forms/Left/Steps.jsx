@@ -11,11 +11,11 @@ const infoSteps = [
 
 function Steps() {
   return (
-    <div className="p-4">
+    <form className="p-4">
       {infoSteps.map((value, id) => {
         return <StepButton key={id} num={value.num} info={value.info} />;
       })}
-    </div>
+    </form>
   );
 }
 
