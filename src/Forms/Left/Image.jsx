@@ -3,7 +3,8 @@ import imageForm from "../../../icons/form-image.png";
 
 import Steps from "./Steps";
 
-function Image() {
+
+function Image({ infoSteps, setInfoSteps, actInfo, setActInfo }) {
   return (
     <div className="flex flex-col pr-2">
       <div
@@ -12,7 +13,7 @@ function Image() {
           backgroundImage: `url(${imageForm})`,
         }}
       >
-        <Steps />
+        <Steps infoSteps={infoSteps} setInfoSteps={setInfoSteps} actInfo={actInfo} setActInfo={setActInfo} />
       </div>
     </div>
   );

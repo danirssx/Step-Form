@@ -1,18 +1,8 @@
 import React from "react";
-import { useState } from "react";
 
-function StepButton({ num, info, status, actInfo, setActInfo, steps }) {
+function StepButton({ num, info, status, actInfo, booleanHandler }) {
   const bgColor = {
     backgroundColor: num === actInfo ? "#F38630" : "transparent",
-  };
-
-  const buttonHandler = (event) => {
-    event.preventDefault();
-    const activeNum = +event.target.value;
-    console.log(event.target.checked);
-
-    setActInfo(activeNum);
-    console.log(actInfo);
   };
 
   return (
@@ -23,7 +13,7 @@ function StepButton({ num, info, status, actInfo, setActInfo, steps }) {
           checked={num === actInfo}
           style={bgColor}
           className="font-bold text-lg px-3 py-1 rounded-full border-solid border-2 bg-transparent border-y-gray-100 hover:border-gray-100 hover:bg-orange-100 focus:outline-none focus:ring"
-          onClick={buttonHandler}
+          onClick={booleanHandler}
         >
           {num}
         </button>
@@ -34,6 +24,7 @@ function StepButton({ num, info, status, actInfo, setActInfo, steps }) {
           <h1 className=" row-span-2  font-medium text-base">{info}</h1>
         </div>
       </div>
+      {status && <h3 className='font-bold'>Te amo mi vida</h3>}
     </div>
   );
 }
