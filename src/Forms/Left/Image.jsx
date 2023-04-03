@@ -1,5 +1,5 @@
 import React from "react";
-import imageForm from "C:/Users/user/Desktop/Code/Step-form/Step-Form/icons/form-image.png";
+import imageForm from "../../../icons/form-image.png";
 
 import Steps from "./Steps";
 
