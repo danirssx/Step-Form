@@ -1,3 +1,3 @@
-# Wordle Game
+# Step-Form
 
-This project is in building process built from scratch using React and Tailwind CSS. It is a Wordle game in Spanish.
+This is a user form with four steps. This project is built with React, Vite, and Tailwind CSS for practice purposes.
