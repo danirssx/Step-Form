@@ -5,12 +5,7 @@ import Card from "./UI/Card";
 import Right from "./Forms/Right/Right";
 import Image from "./Forms/Left/Image";
 
-const INFO_STEPS = [
-  { num: 1, info: "YOUR INFO", status: true },
-  { num: 2, info: "SELECT PLAN", status: false },
-  { num: 3, info: "ADD-ONS", status: false },
-  { num: 4, info: "SUMMARY", status: false },
-];
+import { ADDS_LIST, INFO_STEPS, PLAN_LIST } from "./helpers";
 
 function App() {
   const [infoSteps, setInfoSteps] = useState(INFO_STEPS);
@@ -22,13 +17,17 @@ function App() {
   const [phone, setPhone] = useState("");
 
   // State - Plans
-  const [activePlan, setActivePlan] = useState("Arcade");
+  const [planList, addPlanList] = useState(PLAN_LIST);
+  const [activePlan, setActivePlan] = useState(PLAN_LIST[1]);
+
+  // State - Add Ons
+  const [addOns, setAddOns] = useState(ADDS_LIST);
 
   const submitHandler = (value) => {
     // Set empty values
-    setName("");
-    setEmail("");
-    setPhone("");
+    // setName("");
+    // setEmail("");
+    // setPhone("");
 
     // handling next and back
     setActInfo(value);
@@ -55,8 +54,13 @@ function App() {
           phone={phone}
           setPhone={setPhone}
           // 2nd step
+          planList={planList}
+          addPlanList={addPlanList}
           activePlan={activePlan}
           setActivePlan={setActivePlan}
+          // 3rd step
+          addOns={addOns}
+          setAddOns={setAddOns}
         />
       </Card>
     </div>

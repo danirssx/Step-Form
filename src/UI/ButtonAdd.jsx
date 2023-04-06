@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 function ButtonAdd({ service, info, price, status, id, addOptionHandler }) {
-  const [actual, setActual] = useState("nino");
-
   const inputHandler = (e) => {
     console.log({ service, info, price, status });
 

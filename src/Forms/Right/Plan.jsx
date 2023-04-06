@@ -1,12 +1,15 @@
 import React from "react";
 
 import ButtonPlan from "../../UI/ButtonPlan";
-import iconMalo from "../../../icons/malo.png";
 
-function Plan({ activePlan, setActivePlan }) {
+function Plan({ planList, activePlan, setActivePlan }) {
   const buttonActiveHandler = (value) => {
-    console.log(activePlan);
-    setActivePlan(value);
+    // Find the plan that have the active value
+    const actPlan = planList.find((option) => {
+      return option.text === value;
+    });
+
+    setActivePlan(actPlan);
   };
 
   return (
@@ -19,30 +22,19 @@ function Plan({ activePlan, setActivePlan }) {
       </div>
       <div>
         <div className="space-x-4 p-2">
-          <ButtonPlan
-            bg="bg-orange-200"
-            icon={iconMalo}
-            text="Arcade"
-            price="$9/mo"
-            activePlan={activePlan}
-            buttonActiveHandler={buttonActiveHandler}
-          />
-          <ButtonPlan
-            bg="bg-blue-300"
-            icon={iconMalo}
-            text="Advanced"
-            price="$12/mo"
-            activePlan={activePlan}
-            buttonActiveHandler={buttonActiveHandler}
-          />
-          <ButtonPlan
-            bg="bg-purple"
-            icon={iconMalo}
-            text="Pro"
-            price="$14/mo"
-            activePlan={activePlan}
-            buttonActiveHandler={buttonActiveHandler}
-          />
+          {planList.map((option, id) => {
+            return (
+              <ButtonPlan
+                key={id}
+                text={option.text}
+                icon={option.icon}
+                price={option.price}
+                bg={option.bg}
+                activePlan={activePlan.text}
+                buttonActiveHandler={buttonActiveHandler}
+              />
+            );
+          })}
         </div>
       </div>
     </>

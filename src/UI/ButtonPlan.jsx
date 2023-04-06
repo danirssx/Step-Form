@@ -14,7 +14,7 @@ function ButtonPlan({
       ? buttonActiveHandler(event.target.parentNode.value)
       : buttonActiveHandler(event.target.value);
 
-    console.log({ text, activePlan });
+    console.log(event.target.parentNode.value);
   };
 
   return (

@@ -17,8 +17,13 @@ function Right({
   setPhone,
   actInfo,
   // 2nd step
+  planList,
+  addPlanList,
   activePlan,
   setActivePlan,
+  // 3rd step
+  addOns,
+  setAddOns,
 }) {
   const buttonHandlerBack = (e) => {
     e.preventDefault();
@@ -48,9 +53,14 @@ function Right({
           />
         )}
         {actInfo === 2 && (
-          <Plan activePlan={activePlan} setActivePlan={setActivePlan} />
+          <Plan
+            planList={planList}
+            addPlanList={addPlanList}
+            activePlan={activePlan}
+            setActivePlan={setActivePlan}
+          />
         )}
-        {actInfo === 3 && <AddOns />}
+        {actInfo === 3 && <AddOns addOns={addOns} setAddOns={setAddOns} />}
         {actInfo === 4 && <Summary />}
       </div>
       <div className="space-x-40 inset-x-0 bottom-5 absolute">

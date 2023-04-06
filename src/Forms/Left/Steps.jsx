@@ -2,32 +2,26 @@ import React, { useState } from "react";
 
 import StepButton from "./StepButton";
 
-
 function Steps({ infoSteps, setInfoSteps, actInfo, setActInfo }) {
-
   const booleanHandler = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     // Modifying status value
 
-    setInfoSteps(prevSteps => {
+    setInfoSteps((prevSteps) => {
       const activeNum = +event.target.value;
       setActInfo(activeNum);
 
       const cloneHandler = prevSteps;
-      cloneHandler.map(value => {
-         value.num === activeNum ? value.status = true : value.status = false;
-      })
+      cloneHandler.map((value) => {
+        value.num === activeNum
+          ? (value.status = true)
+          : (value.status = false);
+      });
 
-      return (
-        [...cloneHandler]
-      )
-    })
-  }
-
-  console.log(infoSteps)
-
-
+      return [...cloneHandler];
+    });
+  };
 
   return (
     <form className="p-4">

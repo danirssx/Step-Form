@@ -2,33 +2,10 @@ import React, { useState } from "react";
 
 import ButtonAdd from "../../UI/ButtonAdd";
 
-const addsList = [
-  {
-    service: "Online Service",
-    info: "Access to Multiplayer games",
-    price: "+$1/mo",
-    status: true,
-  },
-  {
-    service: "Larger Storage",
-    info: "Extra 1 TB of cloud save",
-    price: "+$2/mo",
-    status: false,
-  },
-  {
-    service: "Customizable profile",
-    info: "Custom theme on your profile",
-    price: "+$2/mo",
-    status: false,
-  },
-];
-
-function AddOns() {
-  const [addState, setAddState] = useState(addsList);
-
+function AddOns({ addOns, setAddOns }) {
   const addOptionHandler = (id, value) => {
-    console.log(addState);
-    setAddState((prevState) => {
+    console.log(addOns);
+    setAddOns((prevState) => {
       const cloneState = prevState.slice();
 
       cloneState[id].status = value;
@@ -44,7 +21,7 @@ function AddOns() {
         <p className="plainText text-left pb-4">
           Add-Ons help enhance your gaming experience.
         </p>
-        {addState.map((option, id) => {
+        {addOns.map((option, id) => {
           return (
             <ButtonAdd
               key={id}
@@ -57,12 +34,6 @@ function AddOns() {
             />
           );
         })}
-        <ButtonAdd
-          option="Online"
-          id="1"
-          addState={addState}
-          setAddState={setAddState}
-        />
       </div>
     </>
   );
