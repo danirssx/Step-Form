@@ -14,7 +14,7 @@ function Right({ name, setName, email, setEmail, phone, setPhone, actInfo }) {
   };
 
   return (
-    <div>
+    <div className="relative">
       <div className="p-4">
         {actInfo === 1 && (
           <Info
@@ -27,12 +27,12 @@ function Right({ name, setName, email, setEmail, phone, setPhone, actInfo }) {
           />
         )}
         {actInfo === 2 && <Plan />}
-        <div className="space-x-4">
-          <button className="buttonBack">Go Back</button>
-          <button className="buttonNext" onClick={buttonHandler}>
-            Next Step
-          </button>
-        </div>
+      </div>
+      <div className="space-x-40 inset-x-0 bottom-5 absolute">
+        <button className="buttonBack">Go Back</button>
+        <button className="buttonNext" onClick={buttonHandler}>
+          Next Step
+        </button>
       </div>
     </div>
   );

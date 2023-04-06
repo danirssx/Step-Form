@@ -1,6 +1,6 @@
 import React from "react";
 
-function StepButton({ num, info, status, actInfo, booleanHandler }) {
+function StepButton({ num, info, actInfo, booleanHandler }) {
   const bgColor = {
     backgroundColor: num === actInfo ? "#F38630" : "transparent",
   };
@@ -24,7 +24,6 @@ function StepButton({ num, info, status, actInfo, booleanHandler }) {
           <h1 className=" row-span-2  font-medium text-base">{info}</h1>
         </div>
       </div>
-      {status && <h3 className='font-bold'>Te amo mi vida</h3>}
     </div>
   );
 }
