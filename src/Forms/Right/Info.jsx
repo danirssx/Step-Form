@@ -1,17 +1,8 @@
 import React from "react";
 
 function Info({ name, setName, email, setEmail, phone, setPhone }) {
-  const buttonHandler = (e) => {
-    e.preventDefault();
-
-    // Set empty values
-    setName("");
-    setEmail("");
-    setPhone("");
-  };
-
   return (
-    <div className="p-4">
+    <>
       <div className="pb-4">
         <h1 className="text-gray-300 text-left font-semibold text-4xl">
           Personal Info
@@ -54,14 +45,10 @@ function Info({ name, setName, email, setEmail, phone, setPhone }) {
             />
           </div>
 
-          <div className="text-right pt-4 pr-6">
-            <button className="button" onClick={buttonHandler}>
-              Next Step
-            </button>
-          </div>
+          <div className="text-right pt-4 pr-6"></div>
         </form>
       </div>
-    </div>
+    </>
   );
 }
 

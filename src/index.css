@@ -11,7 +11,11 @@
     @apply text-sm text-left text-gray-300 opacity-80 font-normal pb-1;
   }
 
-  .button {
+  .buttonBack {
+    @apply text-lg border-2 font-medium rounded-xl bg-transparent text-gray-200 px-2 py-1 hover:border-transparent hover:opacity-70 focus:outline-none;
+  }
+
+  .buttonNext {
     @apply text-lg border-2 font-medium rounded-xl bg-blue-400 text-gray-100 px-2 py-1 hover:border-blue-200 focus:outline-none;
   }
 }

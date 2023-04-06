@@ -16,7 +16,6 @@ function App() {
   const [infoSteps, setInfoSteps] = useState(INFO_STEPS);
   const [actInfo, setActInfo] = useState(1);
 
-
   // States - Your Info
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,8 +24,14 @@ function App() {
   return (
     <div className="App">
       <Card>
-        <Image infoSteps={infoSteps} setInfoSteps={setInfoSteps} actInfo={actInfo} setActInfo={setActInfo} />
+        <Image
+          infoSteps={infoSteps}
+          setInfoSteps={setInfoSteps}
+          actInfo={actInfo}
+          setActInfo={setActInfo}
+        />
         <Right
+          actInfo={actInfo}
           name={name}
           setName={setName}
           email={email}
