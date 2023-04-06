@@ -1,6 +1,13 @@
 import React from "react";
 
-function Button({ bg, icon, text, price, buttonActiveHandler, activePlan }) {
+function ButtonPlan({
+  bg,
+  icon,
+  text,
+  price,
+  buttonActiveHandler,
+  activePlan,
+}) {
   const buttonHandler = (event) => {
     event.preventDefault();
     event.target.value === undefined
@@ -26,4 +33,4 @@ function Button({ bg, icon, text, price, buttonActiveHandler, activePlan }) {
   );
 }
 
-export default Button;
+export default ButtonPlan;

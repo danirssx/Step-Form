@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "../../UI/Button";
+import ButtonPlan from "../../UI/ButtonPlan";
 import iconMalo from "../../../icons/malo.png";
 
 function Plan({ activePlan, setActivePlan }) {
@@ -19,7 +19,7 @@ function Plan({ activePlan, setActivePlan }) {
       </div>
       <div>
         <div className="space-x-4 p-2">
-          <Button
+          <ButtonPlan
             bg="bg-orange-200"
             icon={iconMalo}
             text="Arcade"
@@ -27,7 +27,7 @@ function Plan({ activePlan, setActivePlan }) {
             activePlan={activePlan}
             buttonActiveHandler={buttonActiveHandler}
           />
-          <Button
+          <ButtonPlan
             bg="bg-blue-300"
             icon={iconMalo}
             text="Advanced"
@@ -35,7 +35,7 @@ function Plan({ activePlan, setActivePlan }) {
             activePlan={activePlan}
             buttonActiveHandler={buttonActiveHandler}
           />
-          <Button
+          <ButtonPlan
             bg="bg-purple"
             icon={iconMalo}
             text="Pro"

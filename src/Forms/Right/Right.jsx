@@ -35,7 +35,7 @@ function Right({
   };
 
   return (
-    <form className="relative" onSubmit={buttonHandlerNext}>
+    <div className="relative">
       <div className="p-4">
         {actInfo === 1 && (
           <Info
@@ -61,7 +61,7 @@ function Right({
           Next Step
         </button>
       </div>
-    </form>
+    </div>
   );
 }
 
