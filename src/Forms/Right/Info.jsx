@@ -10,7 +10,7 @@ function Info({ name, setName, email, setEmail, phone, setPhone }) {
         </p>
       </div>
       <div>
-        <form>
+        <div>
           <div className="pb-2 text-left">
             <h3 className="h3">Name</h3>
             <input
@@ -44,7 +44,7 @@ function Info({ name, setName, email, setEmail, phone, setPhone }) {
           </div>
 
           <div className="text-right pt-4 pr-6"></div>
-        </form>
+        </div>
       </div>
     </>
   );

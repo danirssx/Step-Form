@@ -2,19 +2,40 @@ import React from "react";
 
 import Info from "./Info";
 import Plan from "./Plan";
+import AddOns from "./AddOns";
+import Summary from "./Summary";
 
-function Right({ name, setName, email, setEmail, phone, setPhone, actInfo }) {
-  const buttonHandler = (e) => {
+function Right({
+  // handling
+  submitHandler,
+  // 1st step
+  name,
+  setName,
+  email,
+  setEmail,
+  phone,
+  setPhone,
+  actInfo,
+  // 2nd step
+  activePlan,
+  setActivePlan,
+}) {
+  const buttonHandlerBack = (e) => {
     e.preventDefault();
+    const actNum = actInfo > 1 ? actInfo - 1 : actInfo;
+    submitHandler(actNum);
+  };
 
-    // Set empty values
-    setName("");
-    setEmail("");
-    setPhone("");
+  const buttonHandlerNext = (e) => {
+    e.preventDefault();
+    const actNum = actInfo <= 3 ? actInfo + 1 : actInfo;
+    submitHandler(actNum);
+
+    console.log("bien hecho");
   };
 
   return (
-    <div className="relative">
+    <form className="relative" onSubmit={buttonHandlerNext}>
       <div className="p-4">
         {actInfo === 1 && (
           <Info
@@ -26,15 +47,21 @@ function Right({ name, setName, email, setEmail, phone, setPhone, actInfo }) {
             setPhone={setPhone}
           />
         )}
-        {actInfo === 2 && <Plan />}
+        {actInfo === 2 && (
+          <Plan activePlan={activePlan} setActivePlan={setActivePlan} />
+        )}
+        {actInfo === 3 && <AddOns />}
+        {actInfo === 4 && <Summary />}
       </div>
       <div className="space-x-40 inset-x-0 bottom-5 absolute">
-        <button className="buttonBack">Go Back</button>
-        <button className="buttonNext" onClick={buttonHandler}>
+        <button className="buttonBack" onClick={buttonHandlerBack}>
+          Go Back
+        </button>
+        <button className="buttonNext" onClick={buttonHandlerNext}>
           Next Step
         </button>
       </div>
-    </div>
+    </form>
   );
 }
 

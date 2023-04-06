@@ -14,12 +14,25 @@ const INFO_STEPS = [
 
 function App() {
   const [infoSteps, setInfoSteps] = useState(INFO_STEPS);
-  const [actInfo, setActInfo] = useState(2);
+  const [actInfo, setActInfo] = useState(1);
 
   // States - Your Info
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+
+  // State - Plans
+  const [activePlan, setActivePlan] = useState("Arcade");
+
+  const submitHandler = (value) => {
+    // Set empty values
+    setName("");
+    setEmail("");
+    setPhone("");
+
+    // handling next and back
+    setActInfo(value);
+  };
 
   return (
     <div className="App">
@@ -31,6 +44,9 @@ function App() {
           setActInfo={setActInfo}
         />
         <Right
+          //Handling
+          submitHandler={submitHandler}
+          // 1st step
           actInfo={actInfo}
           name={name}
           setName={setName}
@@ -38,6 +54,9 @@ function App() {
           setEmail={setEmail}
           phone={phone}
           setPhone={setPhone}
+          // 2nd step
+          activePlan={activePlan}
+          setActivePlan={setActivePlan}
         />
       </Card>
     </div>

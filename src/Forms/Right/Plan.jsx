@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Button from "../../UI/Button";
 import iconMalo from "../../../icons/malo.png";
 
-function Plan() {
-  const [active, setActive] = useState("Arcade");
-
+function Plan({ activePlan, setActivePlan }) {
   const buttonActiveHandler = (value) => {
-    console.log(active);
-    setActive(value);
+    console.log(activePlan);
+    setActivePlan(value);
   };
 
   return (
@@ -26,7 +24,7 @@ function Plan() {
             icon={iconMalo}
             text="Arcade"
             price="$9/mo"
-            active={active}
+            activePlan={activePlan}
             buttonActiveHandler={buttonActiveHandler}
           />
           <Button
@@ -34,7 +32,7 @@ function Plan() {
             icon={iconMalo}
             text="Advanced"
             price="$12/mo"
-            active={active}
+            activePlan={activePlan}
             buttonActiveHandler={buttonActiveHandler}
           />
           <Button
@@ -42,7 +40,7 @@ function Plan() {
             icon={iconMalo}
             text="Pro"
             price="$14/mo"
-            active={active}
+            activePlan={activePlan}
             buttonActiveHandler={buttonActiveHandler}
           />
         </div>
