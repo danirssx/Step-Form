@@ -4,10 +4,8 @@ function Info({ name, setName, email, setEmail, phone, setPhone }) {
   return (
     <>
       <div className="pb-4">
-        <h1 className="text-gray-300 text-left font-semibold text-4xl">
-          Personal Info
-        </h1>
-        <p className="text-gray-200 font-light text-sm pt-2">
+        <h1 className="h1">Personal info</h1>
+        <p className="plainText">
           Please provide your name, email address, and phone number.
         </p>
       </div>

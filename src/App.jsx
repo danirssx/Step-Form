@@ -14,7 +14,7 @@ const INFO_STEPS = [
 
 function App() {
   const [infoSteps, setInfoSteps] = useState(INFO_STEPS);
-  const [actInfo, setActInfo] = useState(1);
+  const [actInfo, setActInfo] = useState(2);
 
   // States - Your Info
   const [name, setName] = useState("");
