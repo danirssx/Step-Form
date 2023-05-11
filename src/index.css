@@ -30,6 +30,14 @@
   .buttonNext {
     @apply text-lg border-2 font-medium rounded-xl bg-blue-400 text-gray-100 px-2 py-1 hover:border-blue-200 focus:outline-none;
   }
+
+  .addOns {
+    @apply grid grid-cols-4 cursor-pointer bg-blue-100 p-2 border-solid border-blue-400 border-2 rounded-xl hover:bg-opacity-50 hover:border-opacity-60;
+  }
+
+  .check_Box {
+    @apply appearance-none w-6 h-6 bg-blue-100 border-2 rounded-md border-blue-400 checked:bg-blue-300 checked:border-blue-400 cursor-pointer;
+  }
 }
 
 :root {

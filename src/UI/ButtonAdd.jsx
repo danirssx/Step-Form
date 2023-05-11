@@ -4,29 +4,35 @@ function ButtonAdd({ service, info, price, status, id, addOptionHandler }) {
   const inputHandler = (e) => {
     console.log({ service, info, price, status });
 
-    addOptionHandler(id, e.target.checked);
+    if (e.target.checked !== undefined) {
+      addOptionHandler(id, e.target.checked);
+    } else {
+      addOptionHandler(id, !status);
+    }
   };
 
   return (
-    <form className=" grid grid-cols-4 cursor-pointer p-4 bg-blue-300 pb-2">
-      <div>
-        <input
-          className="col-span-1"
-          type="checkbox"
-          name="Add-Ons"
-          id={id}
-          value={service}
-          checked={status === true}
-          onChange={inputHandler}
-        />
-      </div>
+    <div className="pb-3" onClick={inputHandler}>
+      <form className=" addOns">
+        <div className="pt-2">
+          <input
+            className=" check_Box"
+            type="checkbox"
+            name="Add-Ons"
+            id={id}
+            value={service}
+            checked={status === true}
+            onChange={inputHandler}
+          />
+        </div>
 
-      <div className="col-span-2 text-left">
-        <h2 className="h2">{service}</h2>
-        <h3>{info}</h3>
-      </div>
-      <h1 className="h1 col-span-1">{price}</h1>
-    </form>
+        <div className="col-span-2 text-left">
+          <h2 className="text-lg text-gray-300  font-semibold ">{service}</h2>
+          <h3 className=" text-xs text-gray-200 font-medium">{info}</h3>
+        </div>
+        <h1 className="text-base text-blue-400 font-medium pt-2 ">{price}</h1>
+      </form>
+    </div>
   );
 }
 
