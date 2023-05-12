@@ -1,4 +1,6 @@
-import iconMalo from "../icons/malo.png";
+import fantasma from "../icons/fantasma.png";
+import consola from "../icons/consola.png";
+import videojuegos from "../icons/videojuegos.png";
 
 export const INFO_STEPS = [
   { num: 1, info: "YOUR INFO", status: true },
@@ -8,9 +10,9 @@ export const INFO_STEPS = [
 ];
 
 export const PLAN_LIST = [
-  { text: "Arcade", icon: iconMalo, price: "$9/mo", bg: "bg-orange-200" },
-  { text: "Advanced", icon: iconMalo, price: "$12/mo", bg: "bg-blue-300" },
-  { text: "Pro", icon: iconMalo, price: "$14/mo", bg: "bg-purple" },
+  { text: "Arcade", icon: fantasma, price: "$9/mo", bg: "bg-orange-200" },
+  { text: "Advanced", icon: videojuegos, price: "$12/mo", bg: "bg-blue-300" },
+  { text: "Pro", icon: consola, price: "$14/mo", bg: "bg-purple" },
 ];
 
 export const ADDS_LIST = [

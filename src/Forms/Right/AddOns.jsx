@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import ButtonAdd from "../../UI/ButtonAdd";
 
-function AddOns({ addOns, setAddOns }) {
+function AddOns({ addOns, setAddOns, setActiveAdd }) {
   const addOptionHandler = (id, value) => {
     setAddOns((prevState) => {
       const cloneState = prevState.slice();
@@ -31,6 +31,8 @@ function AddOns({ addOns, setAddOns }) {
                 status={option.status}
                 id={id}
                 addOptionHandler={addOptionHandler}
+                addOns={addOns}
+                setActiveAdd={setActiveAdd}
               />
             );
           })}

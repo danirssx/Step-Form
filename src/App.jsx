@@ -22,14 +22,17 @@ function App() {
 
   // State - Add Ons
   const [addOns, setAddOns] = useState(ADDS_LIST);
+  const [activeAdd, setActiveAdd] = useState([ADDS_LIST[1]]);
 
   const submitHandler = (value) => {
-    // Set empty values
-    // setName("");
-    // setEmail("");
-    // setPhone("");
+    console.log({
+      name,
+      email,
+      phone,
+      activePlan,
+      activeAdd,
+    });
 
-    // handling next and back
     setActInfo(value);
   };
 
@@ -58,9 +61,12 @@ function App() {
           addPlanList={addPlanList}
           activePlan={activePlan}
           setActivePlan={setActivePlan}
+          setActiveAdd={setActiveAdd}
           // 3rd step
           addOns={addOns}
           setAddOns={setAddOns}
+          // 4rd step
+          activeAdd={activeAdd}
         />
       </Card>
     </div>

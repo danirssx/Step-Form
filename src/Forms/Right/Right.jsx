@@ -22,8 +22,11 @@ function Right({
   activePlan,
   setActivePlan,
   // 3rd step
+  setActiveAdd,
   addOns,
   setAddOns,
+  // 4rd step
+  activeAdd,
 }) {
   const buttonHandlerBack = (e) => {
     e.preventDefault();
@@ -35,8 +38,6 @@ function Right({
     e.preventDefault();
     const actNum = actInfo <= 3 ? actInfo + 1 : actInfo;
     submitHandler(actNum);
-
-    console.log("bien hecho");
   };
 
   return (
@@ -60,10 +61,28 @@ function Right({
             setActivePlan={setActivePlan}
           />
         )}
-        {actInfo === 3 && <AddOns addOns={addOns} setAddOns={setAddOns} />}
-        {actInfo === 4 && <Summary />}
+        {actInfo === 3 && (
+          <AddOns
+            addOns={addOns}
+            setAddOns={setAddOns}
+            setActiveAdd={setActiveAdd}
+          />
+        )}
+        {actInfo === 4 && (
+          <Summary
+            // 1st step
+            name={name}
+            email={email}
+            phone={phone}
+            // 2nd step
+            activePlan={activePlan}
+            // 3rd step
+            activeAdd={activeAdd}
+            submitHandler={submitHandler}
+          />
+        )}
       </div>
-      <div className="space-x-40 inset-x-0 bottom-5 absolute">
+      <div className="space-x-40 inset-x-0 bottom-4 absolute">
         <button className="buttonBack" onClick={buttonHandlerBack}>
           Go Back
         </button>

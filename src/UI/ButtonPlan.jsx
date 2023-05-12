@@ -13,8 +13,6 @@ function ButtonPlan({
     event.target.value === undefined
       ? buttonActiveHandler(event.target.parentNode.value)
       : buttonActiveHandler(event.target.value);
-
-    console.log(event.target.parentNode.value);
   };
 
   return (
@@ -26,7 +24,7 @@ function ButtonPlan({
       value={text}
       onClick={buttonHandler}
     >
-      <img src={icon} className="w-20" />
+      <img src={icon} className="w-20 content-center p-2 pl-2" />
       <h2 className="h2 text-gray-400 ">{text}</h2>
       <p className="plainText text-gray-400 text-left pt-0">{price}</p>
     </button>

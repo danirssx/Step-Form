@@ -1,8 +1,28 @@
 import React from "react";
 
-function ButtonAdd({ service, info, price, status, id, addOptionHandler }) {
+function ButtonAdd({
+  service,
+  info,
+  price,
+  status,
+  id,
+  addOns,
+  addOptionHandler,
+  setActiveAdd,
+}) {
   const inputHandler = (e) => {
     console.log({ service, info, price, status });
+
+    console.log(addOns);
+
+    setActiveAdd(() => {
+      const active = [];
+      addOns.map((act) => {
+        act.status === true ? active.push(act) : "";
+      });
+
+      return [...active];
+    });
 
     if (e.target.checked !== undefined) {
       addOptionHandler(id, e.target.checked);
