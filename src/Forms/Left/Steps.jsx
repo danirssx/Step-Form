@@ -19,6 +19,8 @@ function Steps({ infoSteps, setInfoSteps, actInfo, setActInfo }) {
           : (value.status = false);
       });
 
+      console.log(infoSteps);
+
       return [...cloneHandler];
     });
   };

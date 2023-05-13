@@ -8,9 +8,9 @@ import Image from "./Forms/Left/Image";
 import { ADDS_LIST, INFO_STEPS, PLAN_LIST } from "./helpers";
 
 function App() {
-  const [infoSteps, setInfoSteps] = useState(INFO_STEPS);
+  const [infoSteps, setInfoSteps] = useState([INFO_STEPS[0]]);
   const [actInfo, setActInfo] = useState(1);
-
+  // Possible steps
   // States - Your Info
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,6 +32,14 @@ function App() {
       activePlan,
       activeAdd,
     });
+
+    if (infoSteps.length < 4) {
+      setInfoSteps((prevState) => {
+        return [...prevState, INFO_STEPS[value - 1]];
+      });
+    }
+
+    console.log(INFO_STEPS.length);
 
     setActInfo(value);
   };
