@@ -36,8 +36,10 @@ function Right({
 
   const buttonHandlerNext = (e) => {
     e.preventDefault();
-    const actNum = actInfo <= 3 ? actInfo + 1 : actInfo;
+    const actNum = actInfo <= 4 ? actInfo + 1 : actInfo;
     submitHandler(actNum);
+
+    console.log(actNum);
   };
 
   return (
