@@ -34,7 +34,7 @@ function App() {
 
     console.log(validForm);
 
-    if (reEmail.test(email) && name.length > 2 && phone.length > 6) {
+    if (reEmail.test(email) && name.length > 2 && phone.length > 2) {
       setValidForm(true);
       console.log(true);
     } else {
@@ -43,7 +43,7 @@ function App() {
   };
 
   const addStepsHandler = (value) => {
-    if (infoSteps.length < 4 && validForm) {
+    if (infoSteps.length < 4 && validForm && value > infoSteps.length) {
       setInfoSteps((prevState) => {
         return [...prevState, INFO_STEPS[value - 1]];
       });
