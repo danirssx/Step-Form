@@ -8,7 +8,7 @@ import Image from "./Forms/Left/Image";
 import FinalInfo from "./Forms/Right/FinalInfo";
 import FinalImage from "./Forms/Left/FinalImage";
 
-import { ADDS_LIST, INFO_STEPS, PLAN_LIST } from "./helpers";
+import { ADDS_LIST, INFO_STEPS, PLAN_LIST, RE_EMAIL } from "./helpers";
 
 function App() {
   const [infoSteps, setInfoSteps] = useState([INFO_STEPS[0]]);
@@ -29,12 +29,9 @@ function App() {
   const [activeAdd, setActiveAdd] = useState([ADDS_LIST[1]]);
 
   const validFormHandler = () => {
-    const reEmail =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
     console.log(validForm);
 
-    if (reEmail.test(email) && name.length > 2 && phone.length > 2) {
+    if (RE_EMAIL.test(email) && name.length > 2 && phone.length > 2) {
       setValidForm(true);
       console.log(true);
     } else {
@@ -47,8 +44,18 @@ function App() {
       setInfoSteps((prevState) => {
         return [...prevState, INFO_STEPS[value - 1]];
       });
-    } else {
-      alert("Indica bien la información.");
+    }
+
+    if (!validForm) {
+      if (name.length < 3) {
+        alert("Indica bien el nombre.");
+      }
+      if (!RE_EMAIL.test(email)) {
+        alert("Indica bien el correo.");
+      }
+      if (phone.length < 3) {
+        alert("Indica un número de teléfono correcto.");
+      }
     }
   };
 
