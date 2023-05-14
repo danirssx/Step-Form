@@ -8,6 +8,8 @@ import Summary from "./Summary";
 function Right({
   // handling
   submitHandler,
+  addStepsHandler,
+  validFormHandler,
   // 1st step
   name,
   setName,
@@ -38,8 +40,7 @@ function Right({
     e.preventDefault();
     const actNum = actInfo <= 4 ? actInfo + 1 : actInfo;
     submitHandler(actNum);
-
-    console.log(actNum);
+    addStepsHandler(actNum);
   };
 
   return (
@@ -47,6 +48,7 @@ function Right({
       <div className="p-4">
         {actInfo === 1 && (
           <Info
+            validFormHandler={validFormHandler}
             name={name}
             setName={setName}
             email={email}

@@ -1,6 +1,14 @@
 import React from "react";
 
-function Info({ name, setName, email, setEmail, phone, setPhone }) {
+function Info({
+  validFormHandler,
+  name,
+  setName,
+  email,
+  setEmail,
+  phone,
+  setPhone,
+}) {
   return (
     <>
       <div className="pb-4">
@@ -10,7 +18,7 @@ function Info({ name, setName, email, setEmail, phone, setPhone }) {
         </p>
       </div>
       <div>
-        <div>
+        <form onChange={validFormHandler}>
           <div className="pb-2 text-left">
             <h3 className="h3">Name</h3>
             <input
@@ -24,6 +32,7 @@ function Info({ name, setName, email, setEmail, phone, setPhone }) {
           <div className="pb-2 text-left">
             <h3 className="h3">Email Address</h3>
             <input
+              type="email"
               className="input"
               value={email}
               onChange={(e) => {
@@ -44,7 +53,7 @@ function Info({ name, setName, email, setEmail, phone, setPhone }) {
           </div>
 
           <div className="text-right pt-4 pr-6"></div>
-        </div>
+        </form>
       </div>
     </>
   );

@@ -18,6 +18,7 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [validForm, setValidForm] = useState(false);
 
   // State - Plans
   const [planList, addPlanList] = useState(PLAN_LIST);
@@ -26,6 +27,30 @@ function App() {
   // State - Add Ons
   const [addOns, setAddOns] = useState(ADDS_LIST);
   const [activeAdd, setActiveAdd] = useState([ADDS_LIST[1]]);
+
+  const validFormHandler = () => {
+    const reEmail =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    console.log(validForm);
+
+    if (reEmail.test(email) && name.length > 2 && phone.length > 6) {
+      setValidForm(true);
+      console.log(true);
+    } else {
+      console.log(false);
+    }
+  };
+
+  const addStepsHandler = (value) => {
+    if (infoSteps.length < 4 && validForm) {
+      setInfoSteps((prevState) => {
+        return [...prevState, INFO_STEPS[value - 1]];
+      });
+    } else {
+      alert("Indica bien la información.");
+    }
+  };
 
   const submitHandler = (value) => {
     console.log({
@@ -36,13 +61,9 @@ function App() {
       activeAdd,
     });
 
-    if (infoSteps.length < 4) {
-      setInfoSteps((prevState) => {
-        return [...prevState, INFO_STEPS[value - 1]];
-      });
+    if (validForm) {
+      setActInfo(value);
     }
-
-    setActInfo(value);
   };
 
   return (
@@ -63,6 +84,8 @@ function App() {
           <Right
             //Handling
             submitHandler={submitHandler}
+            addStepsHandler={addStepsHandler}
+            validFormHandler={validFormHandler}
             // 1st step
             actInfo={actInfo}
             name={name}
