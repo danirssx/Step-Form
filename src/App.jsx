@@ -3,10 +3,8 @@ import React, { useState } from "react";
 import "./App.css";
 import Card from "./UI/Card";
 import Right from "./Forms/Right/Right";
-import Image from "./Forms/Left/Image";
 // Final
 import FinalInfo from "./Forms/Right/FinalInfo";
-import FinalImage from "./Forms/Left/FinalImage";
 
 import { ADDS_LIST, INFO_STEPS, PLAN_LIST, RE_EMAIL } from "./helpers";
 
@@ -76,7 +74,7 @@ function App() {
   return (
     <div className="App">
       <Card actInfo={actInfo}>
-        {actInfo < 5 ? (
+        {/* {actInfo < 5 ? (
           <Image
             infoSteps={infoSteps}
             setInfoSteps={setInfoSteps}
@@ -85,7 +83,7 @@ function App() {
           />
         ) : (
           <FinalImage />
-        )}
+        )} */}
 
         {actInfo < 5 ? (
           <Right
